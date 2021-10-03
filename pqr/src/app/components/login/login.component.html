@@ -1,0 +1,43 @@
+<div class="main-login shadow-login">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <h2>Login</h2>
+            </div>  
+        </div>    
+        <div class="row">
+            <div class="col-12 mt-5">
+                <form [formGroup]="form"  (submit)="send()">
+                    <div class="row" >
+                        <div class="col-4 text-end py-2">
+                            <label class="h5" for="username">Usuario: </label>
+                        </div>
+                        <div class="col-6 text-start">
+                            <input type="text" name="username" id="username" class="form-control" formControlName="username" required />
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-4 text-end py-2">
+                            <label class="h5" for="pass">Contrasena: </label>
+                        </div>
+                        <div class="col-6 text-start">
+                            <input type="password" name="pass" id="pass" class="form-control" formControlName="pass" required />
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-12 text-center">
+                            <input class="btn btn-primary" type="submit" value="Entrar" />
+                        </div>
+                    </div>
+                </form>                
+            </div>  
+        </div>  
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <a href="#">
+                    <h6>Registrarse</h6>
+                </a>
+            </div> 
+        </div>
+    </div>
+</div>

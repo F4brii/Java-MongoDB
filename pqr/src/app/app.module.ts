@@ -11,6 +11,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { PqrsComponent } from './components/PQR/pqrs/pqrs.component';
+import { TablaComponent } from './components/PQR/tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PqrsComponent } from './components/PQR/pqrs/pqrs.component';
     LoginComponent,
     PruebaComponent,
     RegistrarseComponent,
-    PqrsComponent    
+    PqrsComponent,
+    TablaComponent    
   ],
   imports: [
     BrowserModule,

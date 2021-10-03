@@ -27,7 +27,7 @@ export class RegistrarseComponent implements OnInit {
 
   send(): any {
     let persona = new Persona();
-    persona.nombre = this.form.value.nombres;
+    persona.nombres = this.form.value.nombres;
     persona.apellidos = this.form.value.apellidos;
     persona.correo = this.form.value.correo;
     persona.celular = this.form.value.celular;

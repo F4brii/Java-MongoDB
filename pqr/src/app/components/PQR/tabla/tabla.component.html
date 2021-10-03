@@ -1,0 +1,22 @@
+<table class="table table-hover">
+    <thead>
+        <tr>            
+            <th scope="col">Fecha PQR</th>
+            <th scope="col">Radicado</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Nombre Persona</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let pqr of Lista">
+            <input type="hidden" value="{{pqr.id}}" >
+            <td>{{ pqr.solicitud.fechaSolicitud }}</td>
+            <td>{{ pqr.radicado }}</td>
+            <td>{{ pqr.solicitud.tipo !== null ? pqr.solicitud.tipo.nombre : "No tiene" }}</td>
+            <td>{{ pqr.solicitud.persona.nombres }} {{ pqr.solicitud.persona.apellidos }}</td>
+            <td>{{ pqr.solicitud.persona.correo }}</td>
+        </tr>
+    </tbody>
+</table>

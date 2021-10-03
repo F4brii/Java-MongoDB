@@ -50,7 +50,7 @@ public class PQRController {
             return new ResponseEntity<PQR>(useCase.CrearPQR(pqr), HttpStatus.BAD_REQUEST);
         }
     }
-    @PostMapping("/persona/{id}")
+    @GetMapping("/persona/{id}")
     public ResponseEntity<List<PQR>> ListadoPQRPersona(@PathVariable String id) {
         try {
             return new ResponseEntity<List<PQR>>(useCase.ListaPQRsPersonas(id), HttpStatus.OK);

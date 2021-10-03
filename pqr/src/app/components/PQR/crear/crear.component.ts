@@ -24,6 +24,11 @@ export class CrearComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let user = localStorage.getItem('user');
+    if (user === null || user === ""){
+      alert("Debe iniciar sesion");
+      location.href = "/";
+    }
     this.ObtenerTipos();
   }
 
@@ -39,20 +44,24 @@ export class CrearComponent implements OnInit {
 
   send(): any {
     console.log(this.form.value.tipo)
-    this.service.ObtenerTipo(this.form.value.tipo).subscribe(tipo =>{
-      this.service.ObtenerPersona(String (localStorage.getItem('user'))).subscribe(user =>{
+    this.service.ObtenerTipo(this.form.value.tipo).subscribe(tipo => {
+      this.service.ObtenerPersona(String(localStorage.getItem('user'))).subscribe(user => {
         let solicitud = new Solicitud();
         solicitud.tipo = tipo;
-        solicitud.persona= user.persona;
+        solicitud.persona = user.persona;
         solicitud.cuerpoSolicitud = this.form.value.cuerpo;
         solicitud.estado = true;
         solicitud.fechaSolicitud = new Date();
-        this.service.CrearSolicitud(solicitud).subscribe(soli =>{
+        this.service.CrearSolicitud(solicitud).subscribe(soli => {
           console.log(soli);
-          location.href="pqrs";
+          location.href = "pqrs";
         })
       });
     });
+  }
+
+  CerrarSesion() {
+    location.href = "/pqrs";
   }
 
 }

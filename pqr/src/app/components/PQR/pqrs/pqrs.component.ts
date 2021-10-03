@@ -10,13 +10,23 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class PqrsComponent implements OnInit {
 
-  
+
 
   constructor() { }
 
   ngOnInit(): void {
+    let user = localStorage.getItem('user');
+    if (user === null || user === "") {
+      alert("Debe iniciar sesion");
+      location.href = "/";
+    }
   }
 
-  
+  CerrarSesion() {
+    localStorage.removeItem('user');
+    location.href = "/";
+  }
+
+
 
 }

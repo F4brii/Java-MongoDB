@@ -1,4 +1,5 @@
-package com.pqr.demo.models;
+package com.pqr.demo.Domain.models;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,13 +15,6 @@ public class Persona {
 
     public Persona() {
 
-    }
-
-    public Persona(String nombres, String apellidos, String correo, String celular) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.celular = celular;
     }
 
     public String getNombres() {
@@ -53,5 +47,9 @@ public class Persona {
 
     public void setNombres(String nombres) {
         this.nombres = nombres;
+    }
+
+    public String getId() {
+        return id;
     }
 }

@@ -8,4 +8,6 @@ public interface ITipo {
     List<Tipo> ListaTipos();
 
     Tipo CrearTipo(Tipo tipo);
+
+    Tipo ObtenerTipo(String id);
 }

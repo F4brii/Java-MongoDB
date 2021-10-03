@@ -20,4 +20,8 @@ public class TipoService {
     public Tipo CrearTipo(Tipo tipo){
         return this.repository.CrearTipo(tipo);
     }
+
+    public Tipo ObtenerTipo(String id){
+        return this.repository.ObtenerTipo(id);
+    }
 }

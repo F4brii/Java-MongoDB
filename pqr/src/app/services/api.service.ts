@@ -7,6 +7,8 @@ import { Login } from '../models/login';
 import { Usuario } from '../models/usuario';
 import { Persona } from '../models/persona';
 import { Pqr } from '../models/pqr';
+import { Tipo } from '../models/tipo';
+import { Solicitud } from '../models/solicitud';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +43,17 @@ export class ApiService {
 
   ObtenerPQRs(id: string): Observable<Pqr[]> {
     return this.http.get<Pqr[]>(`${this.restUrl}/api/pqrs/persona/${id}`,  this.httpOptions);
+  }
+
+  ObtenerTipos(): Observable<Tipo[]> {
+    return this.http.get<Tipo[]>(`${this.restUrl}/api/tipos/`,  this.httpOptions);
+  }
+
+  ObtenerTipo(id: string): Observable<Tipo> {
+    return this.http.get<Tipo>(`${this.restUrl}/api/tipos/${id}`,  this.httpOptions);
+  }
+
+  CrearSolicitud(solicitud: Solicitud): Observable<Solicitud> {
+    return this.http.post<Solicitud>(`${this.restUrl}/api/solicitudes/`, solicitud, this.httpOptions);
   }
 }

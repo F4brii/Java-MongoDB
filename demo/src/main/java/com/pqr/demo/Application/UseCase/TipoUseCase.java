@@ -24,4 +24,9 @@ public class TipoUseCase implements ITipoUseCase {
         return this.services.CrearTipo(tipo);
     }
 
+    @Override
+    public Tipo ObtenerTipo(String id) {
+        return this.services.ObtenerTipo(id);
+    }
+
 }

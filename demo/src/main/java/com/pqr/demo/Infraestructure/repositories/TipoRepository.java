@@ -26,5 +26,10 @@ public class TipoRepository implements ITipo {
     public Tipo CrearTipo(Tipo tipo) {
         return this.repository.insert(tipo);
     }
+
+    @Override
+    public Tipo ObtenerTipo(String id) {
+        return this.repository.ObtenerTipo(id);
+    }
     
 }

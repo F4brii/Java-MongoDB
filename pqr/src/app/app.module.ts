@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { PqrsComponent } from './components/PQR/pqrs/pqrs.component';
 import { TablaComponent } from './components/PQR/tabla/tabla.component';
+import { CrearComponent } from './components/PQR/crear/crear.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TablaComponent } from './components/PQR/tabla/tabla.component';
     PruebaComponent,
     RegistrarseComponent,
     PqrsComponent,
-    TablaComponent    
+    TablaComponent,
+    CrearComponent    
   ],
   imports: [
     BrowserModule,

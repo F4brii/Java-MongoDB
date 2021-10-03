@@ -1,0 +1,38 @@
+<div class="main-crear shadow-crear">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <h1>Nuevo PQR</h1>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <form [formGroup]="form"  (submit)="send()">
+                    <div class="row" >
+                        <div class="col-4 text-end py-2">
+                            <label class="h5" for="tipo">Tipo: </label>
+                        </div>
+                        <div class="col-6 text-start py-2">
+                            <select name="tipo" formControlName="tipo" class="col-12" required>
+                                <option [value]="item.id" *ngFor="let item of Lista">{{item.nombre}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-4 text-end py-2">
+                            <label class="h5" for="cuerpo">Contenido de la PQR: </label>
+                        </div>
+                        <div class="col-6 text-start py-3">
+                            <input type="text" name="cuerpo" id="cuerpo" class="form-control" formControlName="cuerpo" required />
+                        </div>
+                    </div>
+                     <div class="row" >
+                        <div class="col-12 text-center">
+                            <input class="btn btn-primary" type="submit" value="Crear PQR" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

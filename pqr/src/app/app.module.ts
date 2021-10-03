@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { PqrsComponent } from './components/PQR/pqrs/pqrs.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RegistrarseComponent } from './components/registrarse/registrarse.compo
     NavbarComponent,
     LoginComponent,
     PruebaComponent,
-    RegistrarseComponent    
+    RegistrarseComponent,
+    PqrsComponent    
   ],
   imports: [
     BrowserModule,

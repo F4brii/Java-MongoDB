@@ -1,6 +1,7 @@
 package com.pqr.demo.Infraestructure.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.pqr.demo.Domain.interfaces.IUsuario;
 import com.pqr.demo.Domain.models.Usuario;
@@ -30,6 +31,11 @@ public class UsuarioRepository implements IUsuario {
     @Override
     public Usuario Login(String usuario, String pass) {
         return this.repository.Login(usuario, pass);
+    }
+
+    @Override
+    public Usuario ObtenerUsuarioId(String id) {
+        return this.repository.ObtenerUsuarioId(id);
     }
     
 }

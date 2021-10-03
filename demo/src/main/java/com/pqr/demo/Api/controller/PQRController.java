@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import com.pqr.demo.Application.UseCase.PQRUseCase;
 import com.pqr.demo.Domain.models.PQR;
+import com.pqr.demo.Domain.models.Persona;
 import com.pqr.demo.Infraestructure.context.IPQRRepository;
 
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
@@ -46,6 +48,14 @@ public class PQRController {
             return new ResponseEntity<PQR>(useCase.CrearPQR(pqr), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<PQR>(useCase.CrearPQR(pqr), HttpStatus.BAD_REQUEST);
+        }
+    }
+    @PostMapping("/persona/{id}")
+    public ResponseEntity<List<PQR>> ListadoPQRPersona(@PathVariable String id) {
+        try {
+            return new ResponseEntity<List<PQR>>(useCase.ListaPQRsPersonas(id), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<List<PQR>>(useCase.ListaPQRsPersonas(id), HttpStatus.BAD_REQUEST);
         }
     }
 }

@@ -3,6 +3,7 @@ package com.pqr.demo.Domain.services;
 import java.util.List;
 
 import com.pqr.demo.Domain.models.PQR;
+import com.pqr.demo.Domain.models.Persona;
 import com.pqr.demo.Infraestructure.context.IPQRRepository;
 import com.pqr.demo.Infraestructure.repositories.PQRRepository;
 
@@ -19,5 +20,9 @@ public class PQRService {
 
     public PQR CrearPQR(PQR pqr) {
         return this.repository.CrearPQR(pqr);
+    }
+
+    public List<PQR> ListaPQRsPersonas(String id) {
+        return this.repository.ListaPQRsPersonas(id);
     }
 }

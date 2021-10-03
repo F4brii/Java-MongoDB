@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.pqr.demo.Application.interfaces.IPQRUsecase;
 import com.pqr.demo.Domain.models.PQR;
+import com.pqr.demo.Domain.models.Persona;
 import com.pqr.demo.Domain.services.PQRService;
 import com.pqr.demo.Infraestructure.context.IPQRRepository;
 
@@ -23,6 +24,11 @@ public class PQRUseCase implements IPQRUsecase {
     @Override
     public PQR CrearPQR(PQR pqr) {
         return this.services.CrearPQR(pqr);
+    }
+
+    @Override
+    public List<PQR> ListaPQRsPersonas(String id) {
+        return this.services.ListaPQRsPersonas(id);
     }
     
 }

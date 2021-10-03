@@ -1,6 +1,7 @@
 package com.pqr.demo.Domain.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.pqr.demo.Domain.models.Usuario;
 import com.pqr.demo.Infraestructure.context.IUsuarioRepository;
@@ -23,5 +24,9 @@ public class UsuarioService {
 
     public Usuario Login(String usuario, String pass) {
         return this.repository.Login(usuario, pass);
+    }
+
+    public Usuario ObtenerUsuarioId(String id) {
+        return this.repository.ObtenerUsuarioId(id);
     }
 }

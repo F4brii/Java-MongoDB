@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       if (data != undefined || data != null) {
         this.usuario = data;
         localStorage.setItem('user', this.usuario.id);
-        location.href="/prueba"
+        location.href = "/pqrs";
       }else{
         location.href="/";
       }

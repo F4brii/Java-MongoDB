@@ -9,4 +9,7 @@ public interface IUsuarioRepository extends MongoRepository<Usuario, String> {
     
     @Query("{usuario: ?0, contrasena: ?1}")  
     Usuario Login(String usuario, String pass);
+
+    @Query("{id: ?0}")  
+    Usuario ObtenerUsuarioId(String id);
 }

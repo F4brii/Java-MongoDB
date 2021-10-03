@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { Login } from '../models/login';
 import { Usuario } from '../models/usuario';
+import { Persona } from '../models/persona';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,15 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  Login(login: Login):Observable<Usuario>{
-    return this.http.post<Usuario>(`http://localhost:8080/api/usuarios/login/`, login, this.httpOptions);
+  Login(login: Login): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.restUrl}/api/usuarios/login/`, login, this.httpOptions);
+  }
+
+  CrearPersona(persona: Persona): Observable<Persona> {
+    return this.http.post<Persona>(`${this.restUrl}/api/personas/`, persona, this.httpOptions);
+  }
+
+  CrearUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.restUrl}/api/usuarios/`, usuario, this.httpOptions);
   }
 }

@@ -39,6 +39,7 @@ export class RegistrarseComponent implements OnInit {
       usuario.usuario = this.form.value.username;
       this.service.CrearUsuario(usuario).subscribe(user =>{
         console.log(user);
+        localStorage.setItem('user', user.id);
         location.href = "/pqrs";
       });
     });

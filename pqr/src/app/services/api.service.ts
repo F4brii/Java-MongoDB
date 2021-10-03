@@ -15,7 +15,7 @@ import { Solicitud } from '../models/solicitud';
 })
 export class ApiService {
 
-  restUrl = "http://localhost:8080"
+  restUrl = "http://localhost:90"
 
   httpOptions = {
     headers: new HttpHeaders({

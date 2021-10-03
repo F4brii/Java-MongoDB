@@ -1,0 +1,35 @@
+version: "3.6"
+
+services:      
+  nginx-spring:
+    image: nginx:1.13
+    restart: always
+    ports: 
+      - "90:90"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - spring
+
+  spring:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: mvn clean spring-boot:run
+    volumes:
+      - ./demo:/demo
+      - ~/.m2:/root/.m2
+    expose:  
+      - "8080"
+    depends_on:
+      - db
+  
+  db:
+    image: mongo
+    restart: always
+    environment:
+        - MONGO_INITDB_DATABASE=project
+        - MONGO_INITDB_ROOT_USERNAME=devroot
+        - MONGO_INITDB_ROOT_PASSWORD=devroot
+    expose:  
+        - "27017"
